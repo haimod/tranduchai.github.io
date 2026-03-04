@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trần Đức Hải — IT Engineer → Data Analyst</title>
+  <meta name="description" content="Portfolio — Trần Đức Hải — IT Engineer chuyển hướng Data Analyst." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- BOOT -->
+  <div class="boot" id="boot">
+    <div class="boot__logo">&lt;TĐH /&gt;</div>
+    <div class="boot__bar-wrap">
+      <div class="boot__bar" id="bootBar"></div>
+    </div>
+    <div class="boot__text" id="bootText"></div>
+  </div>
+
+  <!-- LAYERS -->
+  <div class="aurora"></div>
+  <div class="grid-overlay"></div>
+  <div class="scanlines"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <a href="#" class="nav__logo">&lt;TĐH<span class="blink">_</span>/&gt;</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">Giới thiệu</a></li>
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#career">Định hướng</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle"><i class="fas fa-terminal"></i></button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__rings">
+      <div class="hero__ring">
+        <div class="hero__ring-dot"></div>
+      </div>
+      <div class="hero__ring">
+        <div class="hero__ring-dot"></div>
+      </div>
+      <div class="hero__ring">
+        <div class="hero__ring-dot"></div>
+      </div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__badge"><span class="hero__badge-dot"></span> AVAILABLE FOR OPPORTUNITIES</div>
+      <h1 class="hero__name"><span class="hero__glitch" data-text="Trần Đức Hải">Trần Đức Hải</span></h1>
+      <div class="hero__tagline"><span id="typed"></span><span class="cursor"></span></div>
+      <p class="hero__desc">Kỹ sư CNTT với nền tảng hệ thống vững chắc, đang chuyển hướng sang phân tích dữ liệu. Tôi
+        không chỉ đọc data trên spreadsheet — tôi hiểu data từ tầng database, pipeline, cho đến business logic.</p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary"><i class="fas fa-rocket"></i> Xem dự án</a>
+        <a href="#career" class="btn btn--ghost"><i class="fas fa-satellite-dish"></i> Lộ trình</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="500">0</div>
+          <div class="stat-card__label">Asset Transactions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="30">0</div>
+          <div class="stat-card__label">Day Python Challenge</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="100" data-suffix="%">0</div>
+          <div class="stat-card__label">Zero Data-Loss Deploy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee" id="marquee">
+      <span class="marquee__item"><i class="fas fa-database"></i> MySQL</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fab fa-python"></i> Python</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fab fa-laravel"></i> Laravel</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fas fa-code-branch"></i> Git</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fab fa-docker"></i> Docker</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fab fa-linux"></i> Linux</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fas fa-chart-bar"></i> Data Viz</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fas fa-cogs"></i> CI/CD</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fas fa-table"></i> ETL</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fab fa-html5"></i> HTML/CSS</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fab fa-js"></i> JavaScript</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item"><i class="fas fa-server"></i> DevOps</span><span class="marquee__sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section__head reveal"><span class="section__num">01 — sys.about()</span>
+      <h2 class="section__title">Giới thiệu <em>bản thân</em></h2>
+      <p class="section__sub">IT Engineer không chỉ biết code — mà hiểu cách data chảy qua toàn bộ hệ thống.</p>
+      <div class="section__line"></div>
+    </div>
+    <div class="bento">
+      <div class="bento__main reveal">
+        <p>Với nền tảng <strong>Cử nhân Công nghệ Thông tin</strong>, tôi đã xây dựng hệ thống backend, thiết kế
+          database schema, và vận hành CI/CD pipeline trong môi trường production thực tế.</p>
+        <p>Điều này cho tôi một lợi thế mà nhiều Data Analyst không có: <strong>tư duy hệ thống</strong>. Tôi hiểu cách
+          data được tạo ra, lưu trữ, biến đổi, và truyền tải.</p>
+        <p>Hiện tại, tôi đang hoàn thành <strong>thử thách 30 ngày Python nâng cao</strong> để mài sắc kỹ năng xử lý dữ
+          liệu.</p>
+      </div>
+      <div class="bento__highlight reveal r2">
+        <span class="hl">&gt;</span> Tối ưu hóa <strong>logic phân tích</strong> thông qua game tactics analysis<br />
+        <span class="hl">&gt;</span> Rèn luyện <strong>pattern recognition</strong> từ cultural &amp; historical
+        research<br />
+        <span class="hl">&gt;</span> Mục tiêu: <strong>Data Analyst</strong> → BI Analyst → Data Engineer
+      </div>
+      <div class="bento__card reveal r1">
+        <div class="bento__card-icon">🧠</div>
+        <h4>System Thinking</h4>
+        <p>Hiểu data flow từ database → backend → API → dashboard.</p>
+      </div>
+      <div class="bento__card reveal r2">
+        <div class="bento__card-icon">🔧</div>
+        <h4>Builder Mindset</h4>
+        <p>Quản lý tài sản, automated pipeline, schema design.</p>
+      </div>
+      <div class="bento__card reveal r3">
+        <div class="bento__card-icon">📊</div>
+        <h4>Data-Driven</h4>
+        <p>SQL phức tạp: JOINs, subqueries, aggregations.</p>
+      </div>
+      <div class="bento__card reveal r4">
+        <div class="bento__card-icon">🎯</div>
+        <h4>Growth Mindset</h4>
+        <p>30-day Python challenge, TOEIC, portfolio thực tế.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section__head reveal"><span class="section__num">02 — load.skills()</span>
+      <h2 class="section__title">Kỹ năng <em>chuyên môn</em></h2>
+      <p class="section__sub">Kết hợp Data Analytics, Programming, và Systems Engineering.</p>
+      <div class="section__line"></div>
+    </div>
+    <div class="skills__grid">
+      <div class="skill-panel reveal">
+        <div class="skill-panel__icon">📈</div>
+        <div class="skill-panel__title">Data &amp; Analytics</div>
+        <div class="skill-panel__sub">Primary Focus</div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">SQL (MySQL)</span><span
+              class="skill-item__tag skill-item__tag--p">PRIMARY</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--c" data-w="85"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Python (Data)</span><span
+              class="skill-item__tag skill-item__tag--p">LEARNING</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--c" data-w="60"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Database Design</span><span
+              class="skill-item__tag skill-item__tag--p">PRIMARY</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--c" data-w="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Data Visualization</span><span
+              class="skill-item__tag skill-item__tag--p">BUILDING</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--c" data-w="45"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-panel reveal r1">
+        <div class="skill-panel__icon">💻</div>
+        <div class="skill-panel__title">Programming</div>
+        <div class="skill-panel__sub">Core Competencies</div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">PHP / Laravel</span><span
+              class="skill-item__tag skill-item__tag--s">STRONG</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--g" data-w="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Python (General)</span><span
+              class="skill-item__tag skill-item__tag--s">GROWING</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--g" data-w="55"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">HTML / CSS / JS</span><span
+              class="skill-item__tag skill-item__tag--s">SOLID</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--g" data-w="70"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Git / Version Control</span><span
+              class="skill-item__tag skill-item__tag--s">SOLID</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--g" data-w="75"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-panel reveal r2">
+        <div class="skill-panel__icon">⚙️</div>
+        <div class="skill-panel__title">Systems &amp; Infra</div>
+        <div class="skill-panel__sub">Differentiators</div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">DevOps / CI/CD</span><span
+              class="skill-item__tag skill-item__tag--t">DIFFERENTIATOR</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--p" data-w="75"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Linux / Server</span><span
+              class="skill-item__tag skill-item__tag--t">OPERATIONAL</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--p" data-w="65"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">Docker</span><span
+              class="skill-item__tag skill-item__tag--t">WORKING</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--p" data-w="55"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item__top"><span class="skill-item__name">ETL Pipelines</span><span
+              class="skill-item__tag skill-item__tag--t">BUILDING</span></div>
+          <div class="skill-item__bar">
+            <div class="skill-item__fill fill--p" data-w="50"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section__head reveal"><span class="section__num">03 — render.projects()</span>
+      <h2 class="section__title">Dự án <em>nổi bật</em></h2>
+      <p class="section__sub">Mỗi dự án phân tích qua lăng kính Data Analyst.</p>
+      <div class="section__line"></div>
+    </div>
+    <div class="projects__grid">
+      <div class="proj reveal">
+        <div class="proj__head">
+          <div class="proj__icon"><i class="fas fa-database"></i></div>
+          <div>
+            <div class="proj__num">PROJECT_01</div>
+            <h3 class="proj__title">Asset Management Intelligence System</h3>
+          </div>
+        </div>
+        <div class="proj__body">
+          <div class="star">
+            <div class="star__lbl star__lbl--s">Situation</div>
+            <p class="star__txt">Doanh nghiệp quản lý hàng trăm thiết bị nhưng không có hệ thống theo dõi tập trung.</p>
+          </div>
+          <div class="star">
+            <div class="star__lbl star__lbl--t">Task</div>
+            <p class="star__txt">Thiết kế database schema và xây dựng hệ thống tracking giao dịch mượn/trả.</p>
+          </div>
+          <div class="star">
+            <div class="star__lbl star__lbl--a">Action</div>
+            <p class="star__txt">Thiết kế relational schema; viết complex SQL; xây dựng dashboards.</p>
+          </div>
+          <div class="star">
+            <div class="star__lbl star__lbl--r">Result</div>
+            <p class="star__txt">Theo dõi 500+ giao dịch; phát hiện pattern thất thoát; tự động hóa báo cáo.</p>
+          </div>
+        </div>
+        <div class="proj__tags"><span class="tag">MySQL</span><span class="tag">Laravel</span><span class="tag">SQL
+            JOINs</span><span class="tag">Aggregations</span><span class="tag">Schema Design</span></div>
+        <div class="proj__metrics">
+          <div class="met">
+            <div class="met__val">500+</div>
+            <div class="met__lbl">Transactions</div>
+          </div>
+          <div class="met">
+            <div class="met__val">↓</div>
+            <div class="met__lbl">Shrinkage</div>
+          </div>
+          <div class="met">
+            <div class="met__val">Auto</div>
+            <div class="met__lbl">Reports</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj reveal r1">
+        <div class="proj__head">
+          <div class="proj__icon"
+            style="background:rgba(168,85,247,.06);color:var(--purple);border-color:rgba(168,85,247,.2)"><i
+              class="fas fa-rocket"></i></div>
+          <div>
+            <div class="proj__num">PROJECT_02</div>
+            <h3 class="proj__title">Automated Data Pipeline (CI/CD)</h3>
+          </div>
+        </div>
+        <div class="proj__body">
+          <div class="star">
+            <div class="star__lbl star__lbl--s">Situation</div>
+            <p class="star__txt">Deployment thủ công tốn thời gian, dễ gây lỗi và mất dữ liệu.</p>
+          </div>
+          <div class="star">
+            <div class="star__lbl star__lbl--t">Task</div>
+            <p class="star__txt">Xây dựng CI/CD pipeline tự động từ code commit đến production.</p>
+          </div>
+          <div class="star">
+            <div class="star__lbl star__lbl--a">Action</div>
+            <p class="star__txt">ETL-style workflows; data integrity checks; self-healing processes.</p>
+          </div>
+          <div class="star">
+            <div class="star__lbl star__lbl--r">Result</div>
+            <p class="star__txt">Zero data-loss; giảm 70% thời gian; tự phục hồi lỗi.</p>
+          </div>
+        </div>
+        <div class="proj__tags"><span class="tag">CI/CD</span><span class="tag">Pipeline</span><span
+            class="tag">ETL</span><span class="tag">Data Integrity</span><span class="tag">Self-Healing</span></div>
+        <div class="proj__metrics">
+          <div class="met">
+            <div class="met__val">0</div>
+            <div class="met__lbl">Data Loss</div>
+          </div>
+          <div class="met">
+            <div class="met__val">-70%</div>
+            <div class="met__lbl">Deploy Time</div>
+          </div>
+          <div class="met">
+            <div class="met__val">Auto</div>
+            <div class="met__lbl">Recovery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section id="career">
+    <div class="section__head reveal"><span class="section__num">04 — map.career()</span>
+      <h2 class="section__title">Định hướng <em>nghề nghiệp</em></h2>
+      <p class="section__sub">Lộ trình rõ ràng: IT Engineer → Data Analyst chuyên nghiệp.</p>
+      <div class="section__line"></div>
+    </div>
+    <div class="career__wrap">
+      <div class="tl">
+        <div class="tl__item reveal">
+          <div class="tl__dot"></div>
+          <div class="tl__card"><span class="tl__period tl__period--now">HIỆN TẠI</span>
+            <h3 class="tl__title">Xây dựng nền tảng Data Analyst</h3>
+            <p class="tl__desc">Hoàn thiện kỹ năng cốt lõi, xây portfolio dự án thực tế.</p>
+            <ul class="tl__goals">
+              <li>30-day Advanced Python Data Challenge</li>
+              <li>Nâng cao SQL — complex analytical queries</li>
+              <li>Xây dựng portfolio website</li>
+              <li>TOEIC 500+</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl__item reveal r1">
+          <div class="tl__dot"></div>
+          <div class="tl__card"><span class="tl__period tl__period--6m">6 THÁNG</span>
+            <h3 class="tl__title">Portfolio & cơ hội</h3>
+            <p class="tl__desc">End-to-end analysis projects và chứng minh giá trị trên GitHub.</p>
+            <ul class="tl__goals">
+              <li>2 end-to-end data analysis projects</li>
+              <li>Python (Pandas, Matplotlib) phân tích datasets</li>
+              <li>Technical blog posts</li>
+              <li>Apply Data Analyst / BI Analyst</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl__item reveal r2">
+          <div class="tl__dot"></div>
+          <div class="tl__card"><span class="tl__period tl__period--12m">12 THÁNG</span>
+            <h3 class="tl__title">Data Analyst chuyên nghiệp</h3>
+            <p class="tl__desc">Đóng góp giá trị thực, dùng data giải quyết bài toán kinh doanh.</p>
+            <ul class="tl__goals">
+              <li>Chứng chỉ Data Analytics</li>
+              <li>Real business problems bằng data</li>
+              <li>BI tools (Tableau / Power BI)</li>
+              <li>Junior Data Engineer pathway</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="career__targets reveal">
+        <div class="career__chip"><i class="fas fa-chart-bar"></i><span>Data Analyst</span></div>
+        <div class="career__chip"><i class="fas fa-chart-pie"></i><span>BI Analyst</span></div>
+        <div class="career__chip"><i class="fas fa-server"></i><span>Data Engineer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__links">
+      <a href="https://github.com/" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="footer__copy">/// Designed &amp; Built by Trần Đức Hải — <span id="year"></span> ///</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
